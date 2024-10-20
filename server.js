@@ -5,8 +5,14 @@ const autoRoutes=require('./routes');
 const cors = require('cors');
 
 const app=express();
-app.use('/api', [express.json(),autoRoutes])
-app.use(cors())
+app.use(cors());
+app.use(express.json());
+
+const corsOptions={
+    origin:"https://mernserver-wheat.vercel.app",
+    optionsSuccessStatus:200
+}
+app.use(cors(corsOptions))
 
 // DB Connection
 mongoose.connect(process.env.MONG_URI)
