@@ -5,8 +5,8 @@ const autoRoutes=require('./routes');
 const cors = require('cors');
 
 const app=express();
-// app.use(cors());
-app.use('/api', [cors(), express.json(),autoRoutes])
+app.use(cors());
+app.use('/api', [express.json(),autoRoutes])
 
 // DB Connection
 mongoose.connect(process.env.MONG_URI)
