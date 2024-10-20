@@ -1,0 +1,19 @@
+ try {
+        if (Array.isArray(req.body)){
+             req.body.forEach(async document=>{
+            createRes= await auto.create(document);
+           })
+        }
+        else {
+             createRes=await auto.create({
+                make, model, year,price, type
+            });
+        }
+        
+
+        res.json(createRes);
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+    
