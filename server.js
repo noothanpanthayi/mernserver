@@ -6,7 +6,12 @@ const cors = require('cors');
 
 const app=express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://autodealerclient.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 200,
+}));
 
 app.use('/api', [express.json(),autoRoutes])
 
