@@ -9,7 +9,8 @@ app.use('/api', [express.json(),autoRoutes])
 // DB Connection
 mongoose.connect(process.env.MONG_URI)
 .then(()=>{
-app.listen(process.env.PORT, ()=>{ 
+const PORT=process.env.PORT||8080
+app.listen(PORT, ()=>{ 
     console.log("great connected to db listening on port 4000")
 });
 })
