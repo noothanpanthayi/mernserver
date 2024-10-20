@@ -17,3 +17,10 @@
         res.status(400).json({error:error.message})
     }
     
+
+    //In Mongodb Add IP Address
+    //Add IP Address
+    //Allow Access From Anywhere
+    //Confirm
+
+    URL:https://mernserver-wheat.vercel.app/api/
