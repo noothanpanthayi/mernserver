@@ -5,17 +5,10 @@ const autoRoutes=require('./routes');
 const cors = require('cors');
 
 const app=express();
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://autodealerclient.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    next();
-});
+
 app.use(cors());
 
-app.use('/api', [express.json(),autoRoutes]);
-
-
+app.use('/api', [express.json(),autoRoutes])
 
 
 // DB Connection
