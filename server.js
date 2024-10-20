@@ -8,7 +8,6 @@ const app=express();
 // app.use(cors());
 app.use('/api', [cors(), express.json(),autoRoutes])
 
-
 // DB Connection
 mongoose.connect(process.env.MONG_URI)
 .then(()=>{
